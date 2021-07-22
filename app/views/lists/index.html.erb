@@ -1,0 +1,27 @@
+<%= render '/components/index_banner' %>
+
+<div class="container mb-5">
+  <div class="row">
+    <div class="col my-4 mx-auto d-flex justify-content-between align-items-center">
+      <h1>All lists</h1>
+      <div>
+        <%= link_to "Add a list", new_list_path, class: "btn btn-outline-secondary" %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <% @lists.each do |list| %>
+    <div class="card-container col-md-6 col-xl-4 my-3">
+      <%= link_to list_path(list), class: "list-title" do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.image_url %>)">
+        <%= list.name %>
+      </div>
+      <% end %>
+    </div>
+  <% end %>
+  </div>
+</div>
+</div>
+
+
+<!-- https://source.unsplash.com/eVa2FK83K6w/400x300 -->

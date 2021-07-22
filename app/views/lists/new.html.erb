@@ -1,0 +1,24 @@
+<%= render '/components/index_banner' %>
+
+<div class="container">
+  <div class="row">
+    <div class="col my-4 mx-auto">
+      <h1>Add a new list</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col mx-auto">
+      <%= simple_form_for @list do |f| %>
+        <%= f.input :name %>
+        <%= f.input :image_url %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col mx-auto mt-4">
+      <%= link_to "Back to lists", lists_path, class: "btn btn-sm btn-outline-secondary" %>
+    </div>
+  </div>
+
+</div>

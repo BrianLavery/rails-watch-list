@@ -1,0 +1,9 @@
+.list-card {
+  .movie-title {
+      color: black;
+      text-decoration: none;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+}
