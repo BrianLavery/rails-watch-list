@@ -8,11 +8,7 @@
   </div>
   <div class="row">
     <div class="col mx-auto">
-      <%= simple_form_for @list do |f| %>
-        <%= f.input :name %>
-        <%= f.input :image_url %>
-        <%= f.submit %>
-      <% end %>
+      <%= render 'form', list: @list %>
     </div>
   </div>
   <div class="row">
