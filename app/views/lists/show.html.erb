@@ -14,6 +14,10 @@
     <% @list.bookmarks.each do |bookmark| %>
     <div class="col-md-6 my-4">
       <div class="card-info h-100">
+        <div class="card-info-infos justify-content-center">
+          <p><em>"<%= bookmark.comment %>"</em></p>
+        </div>
+
         <%= link_to list_movie_path(@list, bookmark.movie) do %>
         <img class="poster-fit-div" src="<%= bookmark.movie.poster_url %>" alt="<%= bookmark.movie.title %>"/>
         <% end %>
@@ -23,9 +27,9 @@
             <p><%= bookmark.movie.overview %></p>
           </div>
           <%# @bookmark = Bookmark.find_by(movie: movie, list: @list) %>
-          <%#= link_to bookmark_path(@bookmark), data: { confirm: "Are you sure?", method: :delete } do %>
+          <%= link_to bookmark_path(bookmark), data: { confirm: "Are you sure?", method: :delete } do %>
           <%= image_tag 'delete-bin2.png', alt: "deletion icon", class: "card-info-user" %>
-          <%# end %>
+          <% end %>
         </div>
       </div>
     </div>
