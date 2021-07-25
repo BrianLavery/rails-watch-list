@@ -13,7 +13,7 @@
     <% @lists.each do |list| %>
     <div class="card-container col-md-6 col-xl-4 my-3">
       <%= link_to list_path(list), class: "list-title" do %>
-      <% if list.photo.key.attached?  %>
+      <% if list.photo.attached?  %>
         <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path list.photo.key %>')">
           <%= list.name %>
         </div>
