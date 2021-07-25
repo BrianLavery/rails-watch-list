@@ -1,0 +1,10 @@
+5. Fix the movies#show page with good formatting
+6. Select2 (potentially)
+
+
+DONE
+1. Add a movies#index page
+2. People can post anonymous comments
+3. Users can add movies
+4. Movies can upload own poster
+

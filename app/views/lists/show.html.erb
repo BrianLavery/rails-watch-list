@@ -11,9 +11,12 @@
   </div>
 
   <div class="row">
-    <% @list.bookmarks.each do |bookmark| %>
-    <div class="col-md-6 my-4">
-      <div class="card-info h-100">
+    <div class="movies-container col-xs-12 col-md-9 py-4">
+
+      <% @list.bookmarks.each do |bookmark| %>
+
+
+      <div class="card-info">
         <div class="card-info-infos justify-content-center">
           <p><em>"<%= bookmark.comment %>"</em></p>
         </div>
@@ -32,21 +35,37 @@
           <% end %>
         </div>
       </div>
-    </div>
-    <% end %>
-  </div>
 
-  <div class="row">
-    <div class="col-md-6 my-4">
-      <%= simple_form_for [@list, @bookmark] do |f| %>
-        <%= f.association :movie %>
-        <%= f.input :comment %>
-        <%= f.submit %>
       <% end %>
+
+    </div>
+
+    <div class="sidebar col-xs-12 col-md-3 py-4">
+      <div class="container-sticky">
+        <div class="sidebar-container">
+          <h2>Add a movie to <%= @list.name %></h2>
+          <%= simple_form_for [@list, @bookmark] do |f| %>
+          <%= f.association :movie %>
+          <%= f.input :comment %>
+          <%= f.submit %>
+          <% end %>
+        </div>
+        <div class="sidebar-container" id="comments-form">
+          <h2>Add comments on <%= @list.name %></h2>
+          <%= simple_form_for [@list, @comment] do |f| %>
+          <%= f.input :opinion %>
+          <%= f.submit %>
+          <% end %>
+        </div>
+        <div class="sidebar-container">
+          <h2>Past comments</h2>
+          <% @list.comments.each do |comment| %>
+          <p><%= comment.opinion %></p>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
-
-</div>
 
 
 

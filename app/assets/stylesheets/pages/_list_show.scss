@@ -1,9 +1,56 @@
 .list-card {
   .movie-title {
-      color: black;
+    color: black;
+    text-decoration: none;
+    &:hover {
       text-decoration: none;
-      &:hover {
-        text-decoration: none;
-      }
     }
+  }
 }
+
+// Container for movies
+.movies-container {
+  display: grid;
+  grid-gap: 16px;
+  .card-info {
+    height: 100%;
+    // width: 100%;
+  }
+}
+@media(max-width: 2800px) {
+  .movies-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media(max-width: 768px) {
+  .movies-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Sidebar layout
+.sidebar {
+  display: flex;
+  align-items: flex-start;
+  .container-sticky {
+    position: sticky;
+    top: 1rem;
+  }
+  .sidebar-container {
+    margin-bottom: 2rem;
+    border: 1px solid rgb(225, 225, 225);
+    border-radius: 4px;
+    padding: 8px 4px;
+  }
+  h2 {
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  p {
+    font-size: 0.8em;
+    font-weight: 300;
+  }
+}
+
+

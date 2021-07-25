@@ -6,3 +6,17 @@
     object-position: center;
   }
 }
+
+.card-info {
+  h2 {
+    font-size: 2em;
+    margin: 1em;
+  }
+  p {
+    font-size: 1.2em;
+    margin-bottom: 0.8em;
+  }
+  .text-gold {
+    color: gold;
+  }
+}
