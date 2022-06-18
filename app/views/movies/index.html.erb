@@ -13,31 +13,26 @@
   <div class="row">
 
     <div class="movies-container">
-
       <% @movies.each do |movie| %>
-
-      <div class="card-info">
-        <%= link_to movie_path(movie) do %>
-          <% if movie.photo.attached? %>
-            <%= cl_image_tag movie.photo.key, class: "poster-fit-div" %>
-            <!-- <img class="poster-fit-div" src="<%= cl_image_path movie.photo.key %>" alt="<%= movie.title %>"> -->
-          <% else %>
-            <img class="poster-fit-div" src="<%= movie.poster_url %>" alt="<%= movie.title %>">
+        <div class="card-info">
+          <%= link_to movie_path(movie) do %>
+            <% if movie.photo.attached? %>
+              <%= cl_image_tag movie.photo.key, class: "poster-fit-div" %>
+            <% else %>
+              <img class="poster-fit-div" src="<%= movie.poster_url %>" alt="<%= movie.title %>">
+            <% end %>
           <% end %>
-        <% end %>
-        <div class="card-info-infos">
-          <div>
-            <h2 class="movie-title"><%= movie.title %></h2>
-            <p><%= movie.overview %></p>
+          <div class="card-info-infos">
+            <div>
+              <h2 class="movie-title"><%= movie.title %></h2>
+              <p><%= movie.overview %></p>
+            </div>
           </div>
         </div>
-      </div>
-
       <% end %>
-
     </div>
-
   </div>
+</div>
 
 
 
